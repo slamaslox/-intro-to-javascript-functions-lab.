@@ -329,7 +329,13 @@ Example: calculateGrade(100) should return A.
 Complete the exercise in the space below:
 */
 
-
+const calculateGrade = num => {
+    if (num >= 90) return 'A'; // Curly braces are optional for single-line blocks if statements.
+    if (num >= 80) return 'B';
+    if (num >= 70) return 'C';
+    if (num >= 60) return 'D';
+    return 'F';
+}
 
 console.log('Exercise 10 Result:', calculateGrade(85));
 
@@ -351,9 +357,15 @@ Example: createUsername('Samantha', 'Green') should return 'SamGre13'.
 Complete the exercise in the space below:
 */
 
-
+const createUsername = (firstName, lastName) => {
+    let totalLength = firstName.length + lastName.length;
+    let first3 = firstName.slice(0, 3);
+    let last3 = lastName.slice(0, 3);
+    return `${first3}${last3}${totalLength}`;
+}
 
 console.log('Exercise 11 Result:', createUsername("Samantha", "Green"));
+//console.log('Exercise 11 Result:', createUsername("Daniel", "Martín"));
 
 
 
@@ -366,6 +378,8 @@ This function should return the count of arguments passed to it when called.
 Complete the exercise in the space below:
 */
 
+const numArgs = (...args) =>  args.length; // Use of Rest Parameters
 
 
 console.log('Exercise 12 Result:', numArgs(1, 2, 3, 4));
+//console.log('Exercise 12 Result:', numArgs(1, 2, ['a','b']));
